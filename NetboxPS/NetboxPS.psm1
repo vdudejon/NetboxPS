@@ -3023,7 +3023,7 @@ function InvokeNetboxRequest {
         $null = $splat.Add('Body', ($Body | ConvertTo-Json -Compress))
     }
     
-    $result = Invoke-RestMethod @splat
+    $result = Invoke-RestMethod @splat -SkipCertificateCheck
     
     #region TODO: Handle errors a little more gracefully...
     
